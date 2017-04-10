@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>易考——设置</title>
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/shezhi.css"/>
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+<body>
+    <header>
+    <nav class="clearfloat">
+        <ul>
+            <li class="except"><a href="index.html"><img src="img/logo.png"/><span>易考</span></a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="college.html" target="_blank">考试资料</a></li>
+            <li><a href="help.html" target="_blank">帮辅中心</a></li>
+            <li><a href="share.html">方法分享</a></li>
+            <li class="except" id="search">
+                <form name="form1" action="" method="get">
+                    <input class='searinput' type="search" placeholder="Search"/>
+                </form>
+            </li>
+        </ul>
+        <ul class="clearfloat">
+            <li><a href="upload.html"><img src="img/hup.png"/>上传文档</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+        </ul>
+
+        <ul id="snav1" class="clearfloat">
+            <li><a href="index.html"><img src="img/logo.png"/><span>易考</span></a></li>
+            <li></li>
+        </ul>
+        <ul id="snav2">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="college.html" target="_blank">考试资料</a></li>
+            <li><a href="help.html" target="_blank">帮辅中心</a></li>
+            <li><a href="share.html">方法分享</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+            <li>
+                <form name="form1" action="" method="get">
+                    <input class='searinput' type="search" placeholder="Search"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <ul id="mainnav" class="clearfloat">
+        <li>个人设置</li>
+        <li>修改密码</li>
+    </ul>
+    <main>
+        <ul id="maincont">
+           <li id="basecont">
+               <form>
+                   <ul>
+                       <li>个人设置</li>
+                       <li>
+                           <ul class="clearfloat">
+                               <li>头像</li>
+                               <li>
+                                   <div id="imgdisplay">
+                                       <img src="img/touxiang.png" alt=""/>
+                                   </div>
+                                   <label for="file"><span>点击上传</span></label>
+                                   <input type="file" id="file" name=""  style="display: none;"/>
+                               </li>
+                           </ul>
+                       </li>
+                       <li>
+                           <ul class="clearfloat">
+                               <li>昵称</li>
+                               <li>
+                                       <input class="textinput" type="text" placeholder="请输入您的昵称"/>
+                               </li>
+                               <li class="xiugai">
+                                   <div>
+                                       <img src="img/xg.png"/>修改
+                                   </div>
+                                   <p>
+                                       <span>保存</span>
+                                       <span>取消</span>
+                                   </p>
+                               </li>
+                           </ul>
+                       </li>
+
+                       <li>
+                           <ul class="clearfloat">
+                               <li>邮箱</li>
+                               <li>
+                                   <input type="email"  class="textinput" placeholder="请输入您的邮箱"/>
+                               </li>
+                               <li class="xiugai">
+                                   <div>
+                                       <img src="img/xg.png"/>修改
+                                   </div>
+                                   <p>
+                                       <span>保存</span>
+                                       <span>取消</span>
+                                   </p>
+                               </li>
+                           </ul>
+                       </li>
+
+                       <li>
+                           <ul class="clearfloat">
+                               <li>个人介绍</li>
+                               <li>
+                                       <input type="text" class="textinput" placeholder="请输入您的昵称"/>
+                               </li>
+                               <li class="xiugai">
+                                   <div>
+                                       <img src="img/xg.png"/>修改
+                                   </div>
+                                   <p>
+                                       <span>保存</span>
+                                       <span>取消</span>
+                                   </p>
+                               </li>
+                           </ul>
+                       </li>
+
+                       <li>
+                           <input type="submit" value="提交"/>
+                       </li>
+                   </ul>
+               </form>
+
+           </li>
+            <li id="pwdcont">
+                <form>
+                    <ul>
+                        <li>修改密码</li>
+                        <li>
+                            <ul class="clearfloat">
+                                <li>旧密码</li>
+                                <li>
+                                        <input class="textinput" type="password" placeholder="输入当前密码"/>
+                                </li>
+                                <li><a href="#">忘记密码?</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfloat">
+                                <li>新密码</li>
+                                <li>
+                                        <input id="oldpwd" class="textinput" type="password" placeholder="请设置6位及6位以上的新密码"/>
+                                </li>
+                            </ul>
+                            <div class="pwdtip"></div>
+                        </li>
+                        <li>
+                            <ul class="clearfloat">
+                                <li>确认新密码</li>
+                                <li>
+                                        <input id="newpwd" class="textinput" type="password" placeholder="请重新输入新密码"/>
+                                </li>
+                            </ul>
+                            <div class="pwdtip"></div>
+                        </li>
+                        <li>
+                            <button>保存修改</button>
+                        </li>
+                    </ul>
+                </form>
+            </li>
+        </ul>
+    </main>
+    <script src='js/jquery-3.1.1.min.js'></script>
+    <script src="js/common.js"></script>
+    <script src="js/shezhi.js"></script>
+    <script>
+        document.getElementById('file').onchange = function() {
+            var imgFile = this.files[0];
+            var fr = new FileReader();
+            fr.onload = function() {
+                document.getElementById('imgdisplay').getElementsByTagName('img')[0].src = fr.result;
+            };
+            fr.readAsDataURL(imgFile);
+        };
+    </script>
+
+</body>
+</html>

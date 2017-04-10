@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>易考——上传文档</title>
+    <link type="text/css" rel="stylesheet" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/upload.css"/>
+    <link rel="shortcut icon" href="img/logo.png">
+</head>
+<body>
+    <header>
+    <nav class="clearfloat">
+        <ul>
+            <li class="except"><a href="index.html"><img src="img/logo.png"/><span>易考</span></a></li>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="college.html" target="_blank">考试资料</a></li>
+            <li><a href="help.html" target="_blank">帮辅中心</a></li>
+            <li><a href="share.html">方法分享</a></li>
+            <li class="except" id="search">
+                <form name="form1" action="" method="get">
+                    <input class='searinput' type="search" placeholder="Search"/>
+                </form>
+            </li>
+        </ul>
+        <ul class="clearfloat">
+            <li><a href="upload.html"><img src="img/hup.png"/>上传文档</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+        </ul>
+
+        <ul id="snav1" class="clearfloat">
+            <li><a href="index.html"><img src="img/logo.png"/><span>易考</span></a></li>
+            <li></li>
+        </ul>
+        <ul id="snav2">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="college.html" target="_blank">考试资料</a></li>
+            <li><a href="help.html" target="_blank">帮辅中心</a></li>
+            <li><a href="share.html">方法分享</a></li>
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+            <li>
+                <form name="form1" action="" method="get">
+                    <input class='searinput' type="search" placeholder="Search"/>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <div id="uploadnav">
+        上传文档<span>简单两步，与校友分享你的考试资源</span>
+    </div>
+    <main>
+        <form method="post" enctype="multipart/form-data">
+            <div id="choose">
+                <label id="filelabel" for="upfile"><img src="img/up.png"/>上传我的文档</label>
+                <input type="file" id="upfile" style="display: none;"/>
+                <p>每成功上传一篇公开文章，可获取<span>下载卷+2</span>奖励</p>
+            </div>
+            <ul id="upinfo">
+                <li>
+                        <label><span>*</span>标题：</label><input type="text" placeholder="请输入文档标题"/>
+                </li>
+                <li>
+                        <label><span>*</span>简介：</label>
+                        <textarea></textarea>
+                    <div id="tip">请填写文档简介，帮助文档扩散更广~</div>
+                </li>
+                <li>
+                        <label><span>*</span>学院：</label>
+                        <select>
+                            <option>石工院</option>
+                            <option>地科院</option>
+                            <option>机电院</option>
+                            <option>化工院</option>
+                            <option>材料院</option>
+                            <option>计科院</option>
+                            <option>电信院</option>
+                            <option>土建院</option>
+                            <option>理学院</option>
+                            <option>经管院</option>
+                            <option>法学院</option>
+                            <option>马院</option>
+                            <option>外语院</option>
+                            <option>体育院</option>
+                            <option>艺术院</option>
+                            <option>通用</option>
+                        </select>
+                </li>
+                <li>
+                        <label><span>*</span>年级：</label>
+                        <select>
+                            <option>大一</option>
+                            <option>大二</option>
+                            <option>大三</option>
+                        </select>
+                </li>
+                <li>
+                        <label><span>*</span>学科：</label>
+                        <input type="text" placeholder="请输入上传资料的学科名称"/>
+                </li>
+                <li>
+                        <label><span>*</span>教材：</label>
+                        <div id="imgdisplay">
+                            <img src="img/jc.png" alt="教材"/>
+                        </div>
+                        <label for="file"><span id="upclick">点击上传</span></label>
+                        <input type="file" id="file" name=""  style="display: none;"/>
+                </li>
+            </ul>
+            <div id="upbtn">
+                    <input type="submit" value="上传"/>
+            </div>
+        </form>
+    </main>
+
+    <script src='js/jquery-3.1.1.min.js'></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function(){
+            $('#upinfo>li>textarea,#tip').click(function(){
+                $('#upinfo>li>textarea').focus();
+            });
+            $('#upinfo>li>textarea').focus(function(){
+                $('#upinfo>li:nth-child(2)>#tip').css('display','none');
+            });
+            $('#upinfo>li>textarea').blur(function(){
+               if(this.value=='') {
+                   $('#upinfo>li:nth-child(2)>#tip').css('display', 'block');
+               }
+            });
+        })
+    </script>
+
+    <script>
+//          文档上传并显示文档名
+        document.getElementById('upfile').onchange = function() {
+            var upFile = this.files[0];
+            var fr = new FileReader();
+            fr.onload = function() {
+                document.getElementById('filelabel').innnerHTML = fr.result;
+            };
+//            fr.readAsDataURL(upFile);
+        };
+//        图片上传并显示
+        document.getElementById('file').onchange = function() {
+            var imgFile = this.files[0];
+            var fr = new FileReader();
+            fr.onload = function() {
+                document.getElementById('imgdisplay').getElementsByTagName('img')[0].src = fr.result;
+            };
+            fr.readAsDataURL(imgFile);
+        };
+    </script>
+</body>
+</html>
