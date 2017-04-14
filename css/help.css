@@ -182,6 +182,7 @@ main>#attention{
 
 #bemanito>form>ul>li,#seekmanito>form>ul>li{
     padding:1% 0;
+    position: relative;
 }
 #bemanito>form>ul>li>label,#seekmanito>form>ul>li>label{
     display: inline-block;
@@ -272,7 +273,7 @@ main>#attention{
     position: relative;
 }
 .manitotip{
-    top:10px;
+    top:8px;
     left:40%;
     position: absolute;
     width:200px;
@@ -297,3 +298,9 @@ main>#attention{
     border-style:solid;
     border-color: transparent #ffeccf transparent transparent ;
  }
+form>ul>li:first-child>.manitotip{
+    left:23%;
+}
+form>ul>li:nth-child(2)>.manitotip{
+    left:22%;
+}

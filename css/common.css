@@ -178,8 +178,37 @@ form .searinput {
         background-color: #fff7f2;
     }
 
-    nav ul:nth-child(2) li:last-child a {
+    nav ul:nth-child(2) li:nth-child(3) a {
         color: rgba(0, 0, 0, 0.6);
+    }
+    nav ul:nth-child(2) li:nth-child(4)>a{
+        height:60px;
+        line-height:60px;
+        display: block;
+    }
+
+    nav ul:nth-child(2) li:nth-child(4)>a>img{
+        width:30px;
+        height:30px;
+        vertical-align:middle;
+    }
+    nav ul:nth-child(2) li:nth-child(4)>ul{
+        position: absolute;
+        z-index:100;
+    }
+    nav ul:nth-child(2) li:nth-child(4)>ul>li{
+        position: relative;
+        left:-55%;
+        display: inline-block;
+        height:35px;
+        line-height:35px;
+    }
+    nav >ul:nth-child(2) li:nth-child(4)>ul>li:last-child{
+        cursor: pointer;
+        left:-56%;
+        background-color:#fff;
+        color: #ec4a31;
+        padding:0 10px;
     }
 }
 @media screen and (max-width: 920px){
@@ -264,6 +293,23 @@ form .searinput {
         border-bottom:1px solid rgba(235,235,235,0.7);
 
     }
+    nav>ul:nth-child(4)>li:last-child{
+        border-bottom:1px solid #ddd;
+    }
+    nav>ul:nth-child(4)>li:last-child a{
+        display: inline-block;
+        padding-right:20px;
+        font-size:0.8em;
+    }
+    nav>ul:nth-child(4)>li:last-child>a>img{
+        width:30px;
+        vertical-align: middle;
+    }
+    nav>ul:nth-child(4)>li:last-child>span{
+        cursor: pointer;
+        color: #ec4a31;
+        font-size:0.8em;
+    }
     nav>ul:nth-child(4)>li>a{
         text-align: center;
         color: #ec4a31;
@@ -271,5 +317,6 @@ form .searinput {
     nav>ul:nth-child(4)>li:hover{
         background-color: #eeeeee;
     }
+
 
 }

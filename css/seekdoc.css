@@ -102,3 +102,48 @@ main>form>#seekbtn{
 #seekbtn>input:hover{
     background-color:#ec4a31;
 }
+
+/*学院、年级、学科的提示*/
+#seekinfo>li{
+    position: relative;
+}
+.seektip{
+    top:8px;
+    position: absolute;
+    width:200px;
+    height:35px;
+    padding-left:5px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 1px #ff956a;
+    -moz-box-shadow:0 0 1px #ff956a;
+    box-shadow:0 0 1px #ff956a;
+    color:#ec4a31;
+    font-size:13px;
+    line-height:35px;
+}
+.seektip::after{
+    top:10px;
+    left:-8%;
+    content: '';
+    position: absolute;
+    width:0;
+    height:0;
+    border-width:8px;
+    border-style:solid;
+    border-color: transparent #ffeccf transparent transparent ;
+}
+#seekinfo>li:first-child>.seektip{
+    left:65%;
+}
+#seekinfo>li:nth-child(3)>.seektip,#seekinfo>li:nth-child(4)>.seektip,#seekinfo>li:nth-child(5)>.seektip{
+    left:25%;
+}
+#seekinfo>li:nth-child(4)>.seektip,#seekinfo>li:nth-child(5)>.seektip{
+     left:24%;
+ }
+#seekinfo>li:nth-child(6)>.seektip{
+    left:28%;
+}
+#seekinfo>li:nth-child(7)>.seektip{
+    left:56%;
+}

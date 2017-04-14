@@ -76,31 +76,94 @@ $(function () {
     $('.manitotip').css('display','none');
     $('#bemanito>form>ul>li:nth-child(3)>input[type="text"]').blur(function(){
         if($(this).val()==''){
-            $('.manitotip:first').css('display','block').text('请输入您擅长的学科');
+            $('#bemanito>form>ul>li:nth-child(3)>.manitotip').css('display','block').text('请输入您擅长的学科');
         }else{
-            $('.manitotip:first').css('display','none');
+            $('#bemanito>form>ul>li:nth-child(3)>.manitotip').css('display','none');
         }
     });
     $('#bemanito>form>ul>li:nth-child(6)>input[type="text"]').blur(function(){
         if($(this).val()==''){
-            $('.manitotip:eq(1)').css('display','block').text('请输入您的联系方式');
+            $('#bemanito>form>ul>li:nth-child(6)>.manitotip').css('display','block').text('请输入您的联系方式');
         }else{
-            $('.manitotip:eq(1)').css('display','none');
+            $('#bemanito>form>ul>li:nth-child(6)>.manitotip').css('display','none');
         }
     });
      $('#seekmanito>form>ul>li:nth-child(3)>input[type="text"]').blur(function(){
          if($(this).val()==''){
-             $('.manitotip:eq(2)').css('display','block').text('请输入您要补的学科');
+             $('#seekmanito>form>ul>li:nth-child(3)>.manitotip').css('display','block').text('请输入您要补的学科');
          }else{
-             $('.manitotip:eq(2)').css('display','none');
+             $('#seekmanito>form>ul>li:nth-child(3)>.manitotip').css('display','none');
          }
      });
     $('#seekmanito>form>ul>li:nth-child(5)>input[type="text"]').blur(function(){
         if($(this).val()==''){
-            $('.manitotip:eq(3)').css('display','block').text('请输入您的联系方式');
+            $('#seekmanito>form>ul>li:nth-child(5)>.manitotip').css('display','block').text('请输入您的联系方式');
         }else{
-            $('.manitotip:eq(3)').css('display','none');
+            $('#seekmanito>form>ul>li:nth-child(5)>.manitotip').css('display','none');
+        }
+    });
+
+//    表单进行提交时进行验证
+    $('#bemanito>form>.btn>input[type="submit"]').click(function(e){
+       var $college=$('#bemanito>form>ul>li:first-child>select>option:selected').val();
+        var $class=$('#bemanito>form>ul>li:nth-child(2)>select>option:selected').val();
+        var $subject=$('#bemanito>form>ul>li:nth-child(3)>input').val();
+        var $contact=$('#bemanito>form>ul>li:nth-child(6)>input').val();
+        if($college=='学院'||$class=='年级'||$subject==''||$contact==''){
+            e.preventDefault();
+        }else{
+            e.stopPropagation();
+        }
+        if($college=="学院"){
+            $('#bemanito>form>ul>li:first-child>.manitotip').css('display','block').text('请选择相关学院');
+        }else{
+            $('#bemanito>form>ul>li:first-child>.manitotip').css('display','none');
+        }
+        if($class=='年级'){
+            $('#bemanito>form>ul>li:nth-child(2)>.manitotip').css('display','block').text('请选择相关年级');
+        } else{
+            $('#bemanito>form>ul>li:nth-child(2)>.manitotip').css('display','none');
+        }
+        if($subject==''){
+            $('#bemanito>form>ul>li:nth-child(3)>.manitotip').css('display','block').text('请输入您擅长的学科');
+        }else{
+            $('#bemanito>form>ul>li:nth-child(3)>.manitotip').css('display','none');
+        }
+        if($contact==''){
+            $('#bemanito>form>ul>li:nth-child(6)>.manitotip').css('display','block').text('请输入您的联系方式');
+        }else{
+            $('#bemanito>form>ul>li:nth-child(6)>.manitotip').css('display','none');
+        }
+    });
+    $('#seekmanito>form>.btn>input[type="submit"]').click(function(e){
+        var $college=$('#seekmanito>form>ul>li:first-child>select>option:selected').val();
+        var $class=$('#seekmanito>form>ul>li:nth-child(2)>select>option:selected').val();
+        var $subject=$('#seekmanito>form>ul>li:nth-child(3)>input').val();
+        var $contact=$('#seekmanito>form>ul>li:nth-child(5)>input').val();
+        if($college=='学院'||$class=='年级'||$subject==''||$contact==''){
+            e.preventDefault();
+        }else{
+            e.stopPropagation();
+        }
+        if($college=="学院"){
+            $('#seekmanito>form>ul>li:first-child>.manitotip').css('display','block').text('请选择相关学院');
+        }else{
+            $('#seekmanito>form>ul>li:first-child>.manitotip').css('display','none');
+        }
+        if($class=='年级'){
+            $('#seekmanito>form>ul>li:nth-child(2)>.manitotip').css('display','block').text('请选择相关年级');
+        } else{
+            $('#seekmanito>form>ul>li:nth-child(2)>.manitotip').css('display','none');
+        }
+        if($subject==''){
+            $('#seekmanito>form>ul>li:nth-child(3)>.manitotip').css('display','block').text('请输入您要补的学科');
+        }else{
+            $('#seekmanito>form>ul>li:nth-child(3)>.manitotip').css('display','none');
+        }
+        if($contact==''){
+            $('#seekmanito>form>ul>li:nth-child(5)>.manitotip').css('display','block').text('请输入您的联系方式');
+        }else{
+            $('#seekmanito>form>ul>li:nth-child(5)>.manitotip').css('display','none');
         }
     })
-
 });

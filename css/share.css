@@ -126,6 +126,7 @@ main>#wayshare>ul>li>.content>a:hover{
 }
 .loadmore{
     text-align: center;
+    margin-top:50px;
 }
 .loadmore button{
     display:inline-block;
